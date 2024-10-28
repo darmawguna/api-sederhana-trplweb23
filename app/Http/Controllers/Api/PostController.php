@@ -74,7 +74,7 @@ class PostController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        $post = Post::find(($id));
+        $post = Post::find($id);
         $post->update([
             'title' => $request->title,
             'contents' => $request->contents,
